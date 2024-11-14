@@ -11,12 +11,12 @@ _Примітка: Якщо ви користуєтеся Linux, перекон�
 
 [Run on Repl.it](https://repl.it/github/rust-lang/rustlings)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rust-lang/rustlings) -->
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rust-lang/rustlings) -->rustlings
 
 ## Встановлення
 
 Основний спосіб: Склонуйте репозиторій за останньою міткою та виконайте `cargo install`.
-
+.
 ```bash
 git clone https://github.com/rustlings/{your_fork_name}.git
 cd {your_fork_name}/learn_rust_together
