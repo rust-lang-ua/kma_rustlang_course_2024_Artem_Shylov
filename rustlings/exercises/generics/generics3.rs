@@ -10,18 +10,26 @@
 
 // Execute 'rustlings hint generics3' for hints!
 
-// I AM NOT DONE
+pub enum Grade {
+    Numeric(f32),
+    Alphabetical(String),
+}
 
 pub struct ReportCard {
-    pub grade: f32,
+    pub grade: Grade,
     pub student_name: String,
     pub student_age: u8,
 }
 
 impl ReportCard {
     pub fn print(&self) -> String {
+        let grade_str = match &self.grade {
+            Grade::Numeric(g) => g.to_string(),
+            Grade::Alphabetical(g) => g.clone(),
+        };
+
         format!("{} ({}) - achieved a grade of {}",
-            &self.student_name, &self.student_age, &self.grade)
+                &self.student_name, &self.student_age, grade_str)
     }
 }
 
@@ -32,7 +40,7 @@ mod tests {
     #[test]
     fn generate_numeric_report_card() {
         let report_card = ReportCard {
-            grade: 2.1,
+            grade: Grade::Numeric(2.1),
             student_name: "Tom Wriggle".to_string(),
             student_age: 12,
         };
@@ -44,9 +52,8 @@ mod tests {
 
     #[test]
     fn generate_alphabetic_report_card() {
-        // TODO: Make sure to change the grade here after you finish the exercise.
         let report_card = ReportCard {
-            grade: 2.1,
+            grade: Grade::Alphabetical("A+".to_string()),
             student_name: "Gary Plotter".to_string(),
             student_age: 11,
         };

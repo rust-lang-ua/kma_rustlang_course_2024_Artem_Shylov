@@ -7,13 +7,11 @@
 // Make this code compile! Execute `rustlings hint advanced_errs1` for
 // hints :)
 
-// I AM NOT DONE
+
 
 use std::num::ParseIntError;
 use std::str::FromStr;
 
-// This is a custom error type that we will be using in the `FromStr`
-// implementation.
 #[derive(PartialEq, Debug)]
 enum ParsePosNonzeroError {
     Creation(CreationError),
@@ -22,16 +20,15 @@ enum ParsePosNonzeroError {
 
 impl From<CreationError> for ParsePosNonzeroError {
     fn from(e: CreationError) -> Self {
-        // TODO: complete this implementation so that the `?` operator will
-        // work for `CreationError`
+        ParsePosNonzeroError::Creation(e)
     }
 }
 
-// TODO: implement another instance of the `From` trait here so that the
-// `?` operator will work in the other place in the `FromStr`
-// implementation below.
-
-// Don't change anything below this line.
+impl From<ParseIntError> for ParsePosNonzeroError {
+    fn from(e: ParseIntError) -> Self {
+        ParsePosNonzeroError::ParseInt(e)
+    }
+}
 
 impl FromStr for PositiveNonzeroInteger {
     type Err = ParsePosNonzeroError;
@@ -66,7 +63,6 @@ mod test {
 
     #[test]
     fn test_parse_error() {
-        // We can't construct a ParseIntError, so we have to pattern match.
         assert!(matches!(
             PositiveNonzeroInteger::from_str("not a number"),
             Err(ParsePosNonzeroError::ParseInt(_))

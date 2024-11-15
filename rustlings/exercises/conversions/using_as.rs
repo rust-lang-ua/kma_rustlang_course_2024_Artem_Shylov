@@ -4,12 +4,12 @@
 //
 // The goal is to make sure that the division does not fail to compile
 // and returns the proper type.
-
-// I AM NOT DONE
-
 fn average(values: &[f64]) -> f64 {
+    if values.is_empty() {
+        return f64::NAN; // Return NaN for empty input
+    }
     let total = values.iter().sum::<f64>();
-    total / values.len()
+    total / values.len() as f64
 }
 
 fn main() {
@@ -24,5 +24,10 @@ mod tests {
     #[test]
     fn returns_proper_type_and_value() {
         assert_eq!(average(&[3.5, 0.3, 13.0, 11.7]), 7.125);
+    }
+
+    #[test]
+    fn handles_empty_input() {
+        assert!(average(&[]).is_nan()); // Check if it returns NaN
     }
 }
