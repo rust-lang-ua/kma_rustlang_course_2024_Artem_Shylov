@@ -4,12 +4,8 @@
 // freshly created vector from fill_vec to its caller.
 // Execute `rustlings hint move_semantics4` for hints!
 
-// I AM NOT DONE
-
 fn main() {
-    let vec0 = Vec::new();
-
-    let mut vec1 = fill_vec(vec0);
+    let mut vec1 = fill_vec(); // Викликаємо fill_vec без аргументів
 
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
 
@@ -18,9 +14,9 @@ fn main() {
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
 }
 
-// `fill_vec()` no longer takes `vec: Vec<i32>` as argument
+// `fill_vec()` створює новий вектор і повертає його
 fn fill_vec() -> Vec<i32> {
-    let mut vec = vec;
+    let mut vec = Vec::new(); // Створюємо новий вектор
 
     vec.push(22);
     vec.push(44);
