@@ -5,5 +5,4 @@ We're not going to dictate when you should use which one, but we'll show you how
 to identify and create them, as well as use them.
 
 ## Further information
-
 - [Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)[:ua:](https://rustlangua.github.io/rustbookua.github.io/ch08-02-strings.html) [:uk:](https://doc.rust-lang.org/stable/book/ch08-02-strings.html)

@@ -4,7 +4,6 @@
 fn main() {
     let optional_word = Some(String::from("rustlings"));
 
-    // Використовуємо if let для розпаковування Some
     if let Some(word) = optional_word {
         println!("The word is: {}", word);
     } else {
@@ -15,8 +14,7 @@ fn main() {
     for x in 1..10 {
         optional_integers_vec.push(Some(x));
     }
-
-    // Використовуємо while let для розпаковування значень, які повертає pop
+    
     while let Some(Some(integer)) = optional_integers_vec.pop() {
         println!("current value: {}", integer);
     }

@@ -94,8 +94,11 @@ mod tests {
 
         let mut map = HashMap::new();
         map.insert(String::from("variables1"), Complete);
+
         map.insert(String::from("functions1"), Complete);
+
         map.insert(String::from("hashmap1"), Complete);
+
         map.insert(String::from("arc1"), Some);
         map.insert(String::from("as_ref_mut"), None);
         map.insert(String::from("from_str"), None);
