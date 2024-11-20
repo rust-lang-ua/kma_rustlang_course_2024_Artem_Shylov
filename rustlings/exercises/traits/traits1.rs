@@ -5,8 +5,7 @@
 // `AppendBar' for the type `String'.
 //
 // The trait AppendBar has only one function,
-// which appends "Bar" to any object
-// implementing this trait.
+// whing this trait.
 
 trait AppendBar {
     fn append_bar(self) -> Self;
@@ -17,7 +16,6 @@ impl AppendBar for String {
         format!("{}Bar", self)
     }
 }
-
 fn main() {
     let s = String::from("Foo");
     let s = s.append_bar();

@@ -20,7 +20,6 @@ impl AppendBar for Vec<String> {
         self
     }
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
