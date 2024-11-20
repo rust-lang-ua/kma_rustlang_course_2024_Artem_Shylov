@@ -7,10 +7,9 @@
 // iterators. Only the two iterator methods (count_iterator and
 // count_collection_iterator) need to be modified.
 // Execute `rustlings hint iterators5` for hints.
-//
-// Make the code compile and the tests pass.
 
-use std::collections::HashMap;
+
+use  std::collections::HashMap;
 
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum Progress {

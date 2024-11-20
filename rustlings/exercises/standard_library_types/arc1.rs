@@ -10,13 +10,7 @@
 // The eighth thread (offset 7), will sum 7, 15, 23, ...
 
 // Because we are using threads, our values need to be thread-safe.  Therefore,
-// we are using Arc.  We need to make a change in each of the two TODOs.
 
-
-// Make this code compile by filling in a value for `shared_numbers` where the
-// first TODO comment is, and create an initial binding for `child_numbers`
-// where the second TODO comment is. Try not to create any copies of the `numbers` Vec!
-// Execute `rustlings hint arc1` for hints :)
 
 #![forbid(unused_imports)]
 use std::sync::Arc;
@@ -24,14 +18,9 @@ use std::thread;
 
 fn main() {
     let numbers: Vec<_> = (0..100u32).collect();
-
-    // Створюємо Arc для спільного доступу до вектора
     let shared_numbers = Arc::new(numbers);
-
     let mut joinhandles = Vec::new();
-
     for offset in 0..8 {
-        // Для кожного потоку створюємо слайс з числами, що мають відповідний зсув
         let child_numbers = Arc::clone(&shared_numbers);
 
         joinhandles.push(thread::spawn(move || {
@@ -41,7 +30,6 @@ fn main() {
             println!("Sum of offset {} is {}", offset, sum);
         }));
     }
-
     for handle in joinhandles.into_iter() {
         handle.join().unwrap();
     }
