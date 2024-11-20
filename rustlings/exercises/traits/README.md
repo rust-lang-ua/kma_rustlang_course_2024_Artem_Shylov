@@ -16,4 +16,5 @@ Because traits indicate shared behavior between data types, they are useful when
 
 ## Further information
 
+
 - [Traits](https://doc.rust-lang.org/book/ch10-02-traits.html)[:ua:](https://rustlangua.github.io/rustbookua.github.io/ch10-02-traits.html) [:uk:](https://doc.rust-lang.org/stable/book/ch10-02-traits.html)

@@ -5,9 +5,7 @@ use std::env;
 
 // Verify that the provided container of Exercise objects
 // can be compiled and run without any failures.
-// Any such failures will be reported to the end user.
-// If the Exercise being verified is a test, the verbose boolean
-// determines whether or not the test harness outputs are displayed.
+
 pub fn verify<'a>(
     exercises: impl IntoIterator<Item = &'a Exercise>,
     progress: (usize, usize),
@@ -33,7 +31,6 @@ pub fn verify<'a>(
     }
     Ok(())
 }
-
 enum RunMode {
     Interactive,
     NonInteractive,
